@@ -1,0 +1,31 @@
+#/bin/sh
+PERCENTAGE=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep percentage | awk '{print $2}' | sed 's/.$//')
+
+STATE=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep state | awk '{print $2}')
+
+PERCENTAGE_TEXT=$PERCENTAGE%
+
+COLOR=""
+CHARGING_GLYPH="⚡ "
+if [ "$STATE" = "discharging" ]; then
+	CHARGING_GLYPH=""
+fi
+
+if [ $PERCENTAGE -gt 90 ]; then
+	BATTERY_GLYPH=
+elif [ $PERCENTAGE -gt 75 ]; then
+	BATTERY_GLYPH=
+elif [ $PERCENTAGE -gt 40 ]; then
+	BATTERY_GLYPH=
+elif [ $PERCENTAGE -gt 15 ]; then
+	BATTERY_GLYPH=
+	COLOR="#FFE6B3"
+	PERCENTAGE_TEXT="<span color=\"#FFE6B3\">$PERCENTAGE%</span>"
+else
+	BATTERY_GLYPH=
+	if [ "$STATE" = "discharging" ]; then
+		PERCENTAGE_TEXT="<span color=\"#FF3333\">$PERCENTAGE%</span>"
+	fi
+fi
+
+echo "$CHARGING_GLYPH<span font_desc=\"\">$BATTERY_GLYPH</span> $PERCENTAGE_TEXT"

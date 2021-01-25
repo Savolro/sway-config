@@ -1,0 +1,13 @@
+#!/bin/sh
+SSID=$(iw dev wlp3s0 info | grep ssid | cut -d" " -f2-)
+SIGNAL_STRENGTH=$(iw wlp3s0 link | grep signal | awk '{print $2}' | sed 's/^.//')
+
+if [ $SIGNAL_STRENGTH -lt 51 ]; then
+	GLYPH=
+elif [ $SIGNAL_STRENGTH -lt 60 ]; then
+	GLYPH=
+else
+	GLYPH="WEAK:"
+fi
+
+echo "<span font_desc=\"\">$GLYPH</span> $SSID"

@@ -1,0 +1,232 @@
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#	Variables
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# =========================================================================
+# Workspace Names
+# =========================================================================
+set $sway.workspaces.1.name "1 1 "
+set $sway.workspaces.2.name "2 2 "
+set $sway.workspaces.3.name "3 3 "
+set $sway.workspaces.4.name "4 4 "
+set $sway.workspaces.5.name "5 5 "
+set $sway.workspaces.6.name "6 6 "
+set $sway.workspaces.7.name "7 7 "
+set $sway.workspaces.8.name "8 8 "
+set $sway.workspaces.9.name "0 9 "
+set $sway.workspaces.10.name "10 10 "
+set $sway.workspaces.11.name "11 11 "
+set $sway.workspaces.12.name "12 12 "
+set $sway.workspaces.13.name "13 13 "
+set $sway.workspaces.14.name "14 14 "
+set $sway.workspaces.15.name "15 15 "
+set $sway.workspaces.16.name "16 16 "
+set $sway.workspaces.17.name "17 17 "
+set $sway.workspaces.18.name "18 18 "
+set $sway.workspaces.19.name "19 19 "
+
+# =========================================================================
+# Keys
+# =========================================================================
+set $sway.keys.mod Mod4
+set $sway.keys.ok Return
+set $sway.keys.cancel Escape
+set $sway.keys.quit q
+set $sway.keys.splith b
+set $sway.keys.splitv v
+set $sway.keys.fullscreen f
+
+set $sway.keys.up k
+set $sway.keys.down j
+set $sway.keys.left h
+set $sway.keys.right l
+
+set $sway.keys.resize r
+
+set $sway.keys.prefix.move_focused Mod4+Shift+
+
+
+set $sway.keys.exec.terminal $sway.keys.mod+Return
+set $sway.keys.exec.menu $sway.keys.mod+d
+
+# =========================================================================
+# Various Values
+# =========================================================================
+set $sway.resize.size 10px
+set $terminal gnome-terminal
+# Your preferred application launcher
+# Note: pass the final command to swaymsg so that the resulting window can be opened
+# on the original workspace that the command was run on.
+set $menu dmenu_path | dmenu | xargs swaymsg exec --
+
+# =========================================================================
+# Colors
+# =========================================================================
+set $color_0 #1F2430
+set $color_1 #FF3333
+set $color_2 #A6CC70
+set $color_3 #FFD580
+set $color_4 #BD7908
+set $color_5 #000000
+set $color_6 #F5AD36
+set $color_7 #CBCCC6
+set $color_8 #BFBAB0
+set $color_9 #FF3334
+set $color_10 #BAE67E
+set $color_11 #FFE6b3
+set $color_12 #7A5416
+set $color_13 #FF4773
+set $color_14 #E3B262
+set $color_15 #1F2431
+
+set $color_accent #F9A03F
+set $color_white_accent #E6E1CF
+
+set $color_todo #FF00FF
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#	Key Bindings
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# =========================================================================
+# Focus
+# =========================================================================
+# Move focus around
+bindsym $sway.keys.mod+$sway.keys.up focus up
+bindsym $sway.keys.mod+$sway.keys.down focus down
+bindsym $sway.keys.mod+$sway.keys.left focus left
+bindsym $sway.keys.mod+$sway.keys.right focus right
+
+# Switch to workspace
+bindsym $sway.keys.mod+1 workspace $sway.workspaces.1.name
+bindsym $sway.keys.mod+2 workspace $sway.workspaces.2.name
+bindsym $sway.keys.mod+3 workspace $sway.workspaces.3.name
+bindsym $sway.keys.mod+4 workspace $sway.workspaces.4.name
+bindsym $sway.keys.mod+5 workspace $sway.workspaces.5.name
+bindsym $sway.keys.mod+6 workspace $sway.workspaces.6.name
+bindsym $sway.keys.mod+7 workspace $sway.workspaces.7.name
+bindsym $sway.keys.mod+8 workspace $sway.workspaces.8.name
+bindsym $sway.keys.mod+9 workspace $sway.workspaces.8.name
+bindsym $sway.keys.mod+0 workspace $sway.workspaces.10.name
+
+# =========================================================================
+# Window movement
+# =========================================================================
+# Move focused window around
+bindsym $sway.keys.prefix.move_focused$sway.keys.up move up
+bindsym $sway.keys.prefix.move_focused$sway.keys.down move down
+bindsym $sway.keys.prefix.move_focused$sway.keys.left move left
+bindsym $sway.keys.prefix.move_focused$sway.keys.right move right
+
+# Move focused container to workspace
+bindsym $sway.keys.prefix.move_focused1 move container to workspace $sway.workspaces.1.name
+bindsym $sway.keys.prefix.move_focused2 move container to workspace $sway.workspaces.2.name
+bindsym $sway.keys.prefix.move_focused3 move container to workspace $sway.workspaces.3.name
+bindsym $sway.keys.prefix.move_focused4 move container to workspace $sway.workspaces.4.name
+bindsym $sway.keys.prefix.move_focused5 move container to workspace $sway.workspaces.5.name
+bindsym $sway.keys.prefix.move_focused6 move container to workspace $sway.workspaces.6.name
+bindsym $sway.keys.prefix.move_focused7 move container to workspace $sway.workspaces.7.name
+bindsym $sway.keys.prefix.move_focused8 move container to workspace $sway.workspaces.8.name
+bindsym $sway.keys.prefix.move_focused9 move container to workspace $sway.workspaces.9.name
+bindsym $sway.keys.prefix.move_focused0 move container to workspace $sway.workspaces.10.name
+
+# =========================================================================
+# Resize
+# =========================================================================
+mode "resize" {
+    bindsym $sway.keys.up resize shrink height $sway.resize.size
+    bindsym $sway.keys.down resize grow height $sway.resize.size
+    bindsym $sway.keys.left resize shrink width $sway.resize.size
+    bindsym $sway.keys.right resize grow width $sway.resize.size
+
+    # Return to default mode
+    bindsym $sway.keys.ok mode "default"
+    bindsym $sway.keys.cancel mode "default"
+}
+bindsym $sway.keys.mod+$sway.keys.resize mode "resize"
+
+# =========================================================================
+# Common stuff
+# =========================================================================
+# Kill focused window
+bindsym $sway.keys.prefix.move_focused$sway.keys.quit kill
+
+# Reload the configuration file
+bindsym $sway.keys.mod+Shift+c reload
+
+# Exit sway (logs you out of your Wayland session)
+bindsym $sway.keys.mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+
+# Drag floating windows by holding down $mod and left mouse button.
+# Resize them with right mouse button + $mod.
+# Despite the name, also works for non-floating windows.
+# Change normal to inverse to use left mouse button for resizing and right
+# mouse button for dragging.
+floating_modifier $sway.keys.mod normal
+
+focus_follows_mouse no
+
+# =========================================================================
+# Run applications
+# =========================================================================
+# Start a terminal
+bindsym $sway.keys.exec.terminal exec $terminal
+# Start app launcher
+bindsym $sway.keys.exec.menu exec $menu
+
+# =========================================================================
+# Layout
+# =========================================================================
+# You can "split" the current object of your focus with
+# $mod+b or $mod+v, for horizontal and vertical splits
+# respectively.
+bindsym $sway.keys.mod+$sway.keys.splith splith
+bindsym $sway.keys.mod+$sway.keys.splitv splitv
+
+# Make the current focus fullscreen
+bindsym $sway.keys.mod+$sway.keys.fullscreen fullscreen
+
+# Toggle the current focus between tiling and floating mode
+bindsym $sway.keys.prefix.move_focusedspace floating toggle
+
+# Swap focus between the tiling area and the floating area
+bindsym $sway.keys.mod+space focus mode_toggle
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#	Looks
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# =========================================================================
+# Common
+# =========================================================================
+font pango:JetBrains Mono 13
+
+# Hide window title bars
+default_border pixel
+
+# =========================================================================
+# Bar
+# =========================================================================
+bar {
+    height 25
+    pango_markup enabled
+    position top
+    strip_workspace_numbers yes
+
+    font "pango:JetBrains Mono Medium 13"
+    status_command i3blocks -c ~/.config/sway/i3blocks.conf
+
+    colors {
+        statusline $color_white_accent
+        background $color_15
+        inactive_workspace $color_15 $color_8 $color_15
+        active_workspace $color_15 $color_8 $color_15
+        urgent_workspace $color_15 $color_9 $color_15
+	focused_workspace $color_15 $color_accent $color_15
+    }
+}
+
+#			border		backgr		text		indicator	child_border
+client.focused		$color_0	$color_8	$color_0	$color_todo	$color_8
+
+gaps inner 5
+smart_gaps on
+
+include @sysconfdir@/sway/config.d/*
