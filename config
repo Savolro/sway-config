@@ -254,6 +254,18 @@ output * {
 	background ~/Pictures/background.jpg fill
 }
 
-output XWAYLAND0 disable
 
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#	Misc
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+input * {
+	xkb_layout lt
+	xkb_variant us
+}
+
+seat seat0 xcursor_theme Adwaita 25
+seat seat1 xcursor_theme Adwaita 25
+exec_always gsettings set org.gnome.desktop.interface cursor-theme "Adwaita"
+
+output XWAYLAND0 disable
 include @sysconfdir@/sway/config.d/*
