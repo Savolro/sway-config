@@ -49,6 +49,20 @@ set $sway.keys.exec.menu $sway.keys.mod+d
 
 set $sway.keys.state.sleep $sway.keys.mod+Shift+s
 
+# Fn Keys
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+# TODO: query touchpad identifier dynamically
+bindsym XF86TouchpadToggle exec swaymsg input 2:8:AlpsPS/2_ALPS_DualPoint_TouchPad events toggle enabled disabled
+# bindsym XF86Search exec bemenu-rn
+
 # =========================================================================
 # Various Values
 # =========================================================================
