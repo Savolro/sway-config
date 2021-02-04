@@ -44,9 +44,10 @@ set $sway.keys.resize r
 
 set $sway.keys.prefix.move_focused Mod4+Shift+
 
-
 set $sway.keys.exec.terminal $sway.keys.mod+Return
 set $sway.keys.exec.menu $sway.keys.mod+d
+
+set $sway.keys.state.sleep $sway.keys.mod+Shift+s
 
 # =========================================================================
 # Various Values
@@ -153,7 +154,7 @@ bindsym $sway.keys.prefix.move_focused$sway.keys.quit kill
 bindsym $sway.keys.mod+Shift+c reload
 
 # Exit sway (logs you out of your Wayland session)
-bindsym $sway.keys.mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+bindsym $sway.keys.mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit' -z 'Lock Screen' 'swaylock -c 000000'
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
@@ -171,6 +172,12 @@ focus_follows_mouse no
 bindsym $sway.keys.exec.terminal exec $terminal
 # Start app launcher
 bindsym $sway.keys.exec.menu exec $menu
+
+# =========================================================================
+# Manage system state
+# =========================================================================
+# Sleep
+bindsym $sway.keys.state.sleep exec "systemctl suspend && sleep 1 && swaylock -c 000000"
 
 # =========================================================================
 # Layout
@@ -228,5 +235,11 @@ client.focused		$color_0	$color_8	$color_0	$color_todo	$color_8
 
 gaps inner 5
 smart_gaps on
+
+output * {
+	background ~/Pictures/background.jpg fill
+}
+
+output XWAYLAND0 disable
 
 include @sysconfdir@/sway/config.d/*

@@ -8,6 +8,7 @@ This is a repository for my sway config
 ## Prerequisites
 * `sway`
 * `i3blocks`
+* `swaylock`
 * JetBrains Mono font
 * Any font for special glyph symbols (see `i3blocks-modules`)
 
