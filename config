@@ -220,7 +220,7 @@ bindsym $sway.keys.mod+space focus mode_toggle
 font pango:JetBrains Mono 13
 
 # Hide window title bars
-default_border pixel
+default_border pixel 1
 
 # =========================================================================
 # Bar
@@ -261,6 +261,8 @@ output * {
 input * {
 	xkb_layout lt
 	xkb_variant us
+	tap enabled
+	natural_scroll enabled
 }
 
 seat seat0 xcursor_theme Adwaita 25
