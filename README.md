@@ -12,6 +12,7 @@ This is a repository for my sway config
 * `rofi`
 * `brightnessctl`
 * `jq`
+* `wl-clipboard`
 * `grim`
 * `slurp`
 * JetBrains Mono font
