@@ -34,6 +34,7 @@ set $sway.keys.quit q
 set $sway.keys.splith b
 set $sway.keys.splitv v
 set $sway.keys.fullscreen f
+set $sway.keys.clipboard Ctrl
 
 set $sway.keys.up k
 set $sway.keys.down j
@@ -42,26 +43,14 @@ set $sway.keys.right l
 
 set $sway.keys.resize r
 
+set $sway.keys.screenshot p
+
 set $sway.keys.prefix.move_focused Mod4+Shift+
 
 set $sway.keys.exec.terminal $sway.keys.mod+Return
 set $sway.keys.exec.menu $sway.keys.mod+d
 
 set $sway.keys.state.sleep $sway.keys.mod+Shift+s
-
-# Fn Keys
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
-bindsym XF86MonBrightnessUp exec brightnessctl set +5%
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
-# TODO: query touchpad identifier dynamically
-bindsym XF86TouchpadToggle exec swaymsg input 2:8:AlpsPS/2_ALPS_DualPoint_TouchPad events toggle enabled disabled
-# bindsym XF86Search exec bemenu-rn
 
 # =========================================================================
 # Various Values
@@ -193,6 +182,20 @@ bindsym $sway.keys.exec.menu exec $menu
 # Sleep
 bindsym $sway.keys.state.sleep exec "systemctl suspend && sleep 1 && swaylock -c 000000"
 
+# Fn Keys
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+# TODO: query touchpad identifier dynamically
+bindsym XF86TouchpadToggle exec swaymsg input 2:8:AlpsPS/2_ALPS_DualPoint_TouchPad events toggle enabled disabled
+# bindsym XF86Search exec bemenu-rn
+
 # =========================================================================
 # Layout
 # =========================================================================
@@ -210,6 +213,21 @@ bindsym $sway.keys.prefix.move_focusedspace floating toggle
 
 # Swap focus between the tiling area and the floating area
 bindsym $sway.keys.mod+space focus mode_toggle
+
+# =========================================================================
+# Screenshot
+# =========================================================================
+# Screenshot the active output to a file
+bindsym $sway.keys.mod+$sway.keys.screenshot exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') $(xdg-user-dir PICTURES)/screenshot-$(date +%Y-%m-%d-%H-%M-%S-%N).png
+
+# Screenshot the selected area to a file
+bindsym $sway.keys.prefix.move_focused$sway.keys.screenshot exec grim -g "$(slurp -d)" $(xdg-user-dir PICTURES)/screenshot-$(date +%Y-%m-%d-%H-%M-%S-%N).png
+
+# Screenshot the active output to a clipboard
+bindsym $sway.keys.mod+$sway.keys.clipboard+$sway.keys.screenshot exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') - | wl-copy
+
+# Screenshot the selected area to a clipboard
+bindsym $sway.keys.prefix.move_focused$sway.keys.clipboard+$sway.keys.screenshot exec grim -g "$(slurp -d)" - | wl-copy
 
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #	Looks

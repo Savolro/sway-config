@@ -2,13 +2,18 @@
 This is a repository for my sway config
 
 ## TODO
-* at least some automatic terminal color config. Currently you should take all colors from the config file and add to your terminal config accordingly
+[] at least some automatic terminal color config. Currently you should take all colors from the config file and add to your terminal config accordingly
+[] Replace `rofi` with `wofi`
 
 ## Prerequisites
 * `sway`
 * `i3blocks`
 * `swaylock`
 * `rofi`
+* `brightnessctl`
+* `jq`
+* `grim`
+* `slurp`
 * JetBrains Mono font
 * Any font for special glyph symbols (see `i3blocks-modules`)
 
