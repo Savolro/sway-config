@@ -250,6 +250,8 @@ bar {
     position top
     strip_workspace_numbers yes
 
+    tray_output none
+
     font "pango:JetBrains Mono Medium 13"
     status_command i3blocks -c ~/.config/sway/i3blocks.conf
 
