@@ -1,28 +1,28 @@
 /* global settings and color variables */
 configuration {
    modi: "drun";
-   font: "JetBrains Mono Bold 13";
+   font: "Fira Code Light 13";
    show-icons: true;
 }
 
 element-icon {
-    size:             3ch ;
+    size:             2ch ;
 }
 
 * {
-   blue:             #a6e1ff;
-   darkblue:         #d18d0f; // selected color
-   cyan:             #95e6cb;
-   lightcyan:        #d18d0f; // selected color
-   green:            #cee6ac;
+   blue:             #8abeb7;
+   darkblue:         #5f819d; // selected color
+   cyan:             #b294bb;
+   lightcyan:        #5f819d; // selected color
+   green:            #b5bd68;
    red:              #cc6666;
 
-   dark1:            #1f2430;
-   dark2:            #292b30;
-   dark3:            #bfbab0;
-   dark4:            #bfbab0;
+   dark1:            #1d1f21;
+   dark2:            #282a2e;
+   dark3:            #c5c8c6;
+   dark4:            #c5c8c6;
 
-   light1:           #ffb730;
+   light1:           #81a2be;
 
    background-color: @dark1;
    border-color:     @dark2;

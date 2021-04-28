@@ -10,12 +10,11 @@ This is a repository for my sway config
 * `i3blocks`
 * `swaylock`
 * `rofi`
+* JetBrains Mono font
 * `brightnessctl`
 * `jq`
-* `wl-clipboard`
 * `grim`
 * `slurp`
-* JetBrains Mono font
 * Any font for special glyph symbols (see `i3blocks-modules`)
 
 ## Installation
