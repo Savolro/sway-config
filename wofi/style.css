@@ -1,0 +1,31 @@
+* {
+	font-family: "Fira Code";
+	border: 0px none;
+	outline: none;
+}
+
+window {
+	font-size: 20;
+	background-color: #282a2e;
+	color: #c5c8c6;
+	padding-left: 1000px;
+}
+
+#text {
+	padding-left: 15px;
+}
+
+#text:selected {
+	color: #5e8d8f;
+}
+
+#entry:selected {
+	background-color: #282a2e;
+}
+
+#input {
+	border-radius: 0px;
+	color: #cbccc6;
+	background-color: #373b41;
+	caret-color: transparent;
+}

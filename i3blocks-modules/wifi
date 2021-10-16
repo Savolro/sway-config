@@ -1,6 +1,6 @@
 #!/bin/sh
-SSID=$(iw dev wlp0s20f3 info | grep ssid | cut -d" " -f2-)
-SIGNAL_STRENGTH=$(iw wlp0s20f3 link | grep signal | awk '{print $2}' | sed 's/^.//')
+SSID=$(/sbin/iw dev wlp0s20f3 info | grep ssid | cut -d" " -f2-)
+SIGNAL_STRENGTH=$(/sbin/iw wlp0s20f3 link | grep signal | awk '{print $2}' | sed 's/^.//')
 
 if [ $SIGNAL_STRENGTH -lt 51 ]; then
 	GLYPH=

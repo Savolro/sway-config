@@ -1,0 +1,11 @@
+font=FiraCode
+
+[warning]
+text=c5c8c6
+background=282a2e
+border-bottom=373b41
+border=373b41
+button-background=81a2be
+button-border-size=2
+button-gap=20
+button-margin-right=10

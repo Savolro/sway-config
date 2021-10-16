@@ -6,7 +6,7 @@ STATE=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep state | aw
 PERCENTAGE_TEXT=$PERCENTAGE%
 
 COLOR=""
-CHARGING_GLYPH="⚡ "
+CHARGING_GLYPH=" "
 if [ "$STATE" = "discharging" ]; then
 	CHARGING_GLYPH=""
 fi

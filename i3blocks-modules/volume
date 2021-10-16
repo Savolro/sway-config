@@ -1,16 +1,16 @@
 #!/bin/sh
-# VOLUME=$(amixer sget Master | awk -F"[][]" '/Left:/ {print $2}' | sed 's/.$//')
-VOLUME=$(amixer sget Master | awk -F"[][]" '/dB/ {print $2}' | sed 's/.$//')
+VOLUME=$(amixer sget Master | awk -F"[][]" '/Left:/ {print $2}' | sed 's/.$//')
+# VOLUME=$(amixer sget Master | awk -F"[][]" '/dB/ {print $2}' | sed 's/.$//')
 
 IS_ON=$(amixer sget Master | awk -F"[][]" '/dB/ {print $6}')
 if [ $VOLUME -gt 50 ]; then
-	GLYPH=🔊
+	GLYPH=
 elif [ $VOLUME -gt 0 ]; then
-	GLYPH=🔉
-else
 	GLYPH=🔈
+else
+	GLYPH=
 fi
 if [ "$IS_ON" = "off" ]; then
-	GLYPH=🔇
+	GLYPH=
 fi
 echo "<span font_desc=\"\">$GLYPH</span> $VOLUME%"

@@ -1,0 +1,6 @@
+font=FiraCode
+font-size=30
+color=000000
+show-failed-attempts
+indicator-radius=150
+image=~/Pictures/lockscreen.jpg
