@@ -1,0 +1,60 @@
+cursor:
+  # Block Underline or Beam
+  style: Block
+
+font:
+  normal:
+    # Needs to be powerline font if using zsh theme with powerline
+    family: Source Code Pro
+  # Font sizme
+  size: 17
+
+    # colors:
+    #   primary:
+    #     background: '#2e3440'
+    #     foreground: '#d8dee9'
+    # 
+    #   normal:
+    #     black:   '#2e3440'
+    #     red:     '#bf616a'
+    #     green:   '#8fbcbb'
+    #     yellow:  '#4c566a'
+    #     blue:    '#4d688a'
+    #     magenta: '#b48ead'
+    #     cyan:    '#577e8a'
+    #     white:   '#d8dee9'
+    # 
+    #   bright:
+    #     black:   '#3b4252'
+    #     red:     '#fa7f8b'
+    #     green:   '#a3be8c'
+    #     yellow:  '#e5e9f0'
+    #     blue:    '#5e81ac'
+    #     magenta: '#81a1c1'
+    #     cyan:    '#88c0d0'
+    #     white:   '#eceff4'
+
+colors:
+  primary:
+    background: '#2e3440'
+    foreground: '#d8dee9'
+
+  normal:
+    black:   '#2e3440'
+    red:     '#bf616a'
+    green:   '#a3be8c'
+    yellow:  '#d08770'
+    blue:    '#5e81ac'
+    magenta: '#b48ead'
+    cyan:    '#8fbcbb'
+    white:   '#d8dee9'
+
+  bright:
+    black:   '#3b4252'
+    red:     '#ed7782'
+    green:   '#cff2b1'
+    yellow:  '#ebcb8b'
+    blue:    '#81a1c1'
+    magenta: '#edbbe4'
+    cyan:    '#88c0d0'
+    white:   '#eceff4'

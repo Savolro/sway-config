@@ -151,6 +151,7 @@ focus_follows_mouse no
 # Run applications
 # =========================================================================
 # Start a terminal
+set $terminal alacritty
 bindsym $sway.keys.exec.terminal exec $terminal
 # Start app launcher
 bindsym $sway.keys.exec.menu exec $menu
@@ -215,7 +216,7 @@ bindsym $sway.keys.prefix.move_focused$sway.keys.clipboard+$sway.keys.screenshot
 # =========================================================================
 # Common
 # =========================================================================
-font pango: Fira Code Light 10
+font pango: Source Code Pro Light 10
 
 # Hide window title bars
 default_border pixel 1
@@ -230,21 +231,21 @@ bar {
     strip_workspace_numbers yes
     tray_output none
 
-    font "pango: FiraCode Regular 10"
+    font "pango: Source Code Pro Regular 11"
     status_command i3blocks -c ~/.config/sway/i3blocks.conf
 
     colors {
-        statusline $color_white_accent
-        background $color_15
-        inactive_workspace $color_15 $color_15 $color_7
-        active_workspace $color_15 $color_8 $color_15
-        urgent_workspace $color_15 $color_9 $color_15
-	focused_workspace $color_15 $color_accent $color_1
+        statusline $color_4
+        background $color_0
+        inactive_workspace $color_0 $color_0 $color_9
+        active_workspace $color_0 $color_10 $color_0
+	urgent_workspace $color_0 $color_11 $color_0
+	focused_workspace $color_0 $color_9 $color_0
     }
 }
 
 #			border		backgr		text		indicator	child_border
-client.focused		$color_0	$color_8	$color_0	$color_7	$color_8
+client.focused		$color_0	$color_8	$color_0	$color_8	$color_9
 
 gaps inner 5
 smart_gaps on
