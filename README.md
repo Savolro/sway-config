@@ -2,42 +2,28 @@
 This is a repository for my sway config
 
 ## TODO
-[] at least some automatic terminal color config. Currently you should take all colors from the config file and add to your terminal config accordingly
-[] Replace `rofi` with `wofi`
+- [ ] at least some automatic terminal color config. Currently you should take all colors from the config file and add to your terminal config accordingly
+- [ ] replace all the fonts with xujcons
 
 ## Prerequisites
 * `sway`
 * `i3blocks`
 * `swaylock`
-* `rofi`
-* JetBrains Mono font
+* `wofi`
 * `brightnessctl`
 * `jq`
 * `grim`
 * `slurp`
 * Any font for special glyph symbols (see `i3blocks-modules`)
+* Xujcons font
 
 ## Installation
-* Place the content of this repository into `~/.config/sway`
-* Create a symbolic link from default rofi config dir to this one:
+Execute these commands to fully install the config
+
 ``` bash
-ln -s ~/.config/sway/rofi.rasi ~/.config/rofi/config.rasi
+git clone https://github.com/Savolro/sway-config.git ~/.config/sway
+ln -s ~/.config/sway/swaylock ~/.config/swaylock
+ln -s ~/.config/sway/wofi ~/.config/wofi
+ln -s ~/.config/sway/alacritty ~/.config/alacritty
+ln -s ~/.config/sway/swaynag ~/.config/swaynag
 ```
-
-## Additional color settings for terminal
-Example taken from `gnome-terminal`
-
-### Default color
-Text: `color_7`
-Background: `color_7`
-
-### Bold color
-Text: `color_4`
-
-### Cursor color
-Text: `color_2`
-Background: `color_8`
-
-### Highlight color
-Text: `color_1`
-Background: `color_8`

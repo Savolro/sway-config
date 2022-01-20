@@ -1,13 +1,17 @@
 #!/bin/sh
-SSID=$(/sbin/iw dev wlp0s20f3 info | grep ssid | cut -d" " -f2-)
+IFACE_NAME=$(/sbin/iw dev | awk '$1=="Interface"{print $2}')
+SSID=$(/sbin/iw dev $IFACE_NAME info | grep ssid | cut -d" " -f2-)
 SIGNAL_STRENGTH=$(/sbin/iw wlp0s20f3 link | grep signal | awk '{print $2}' | sed 's/^.//')
 
-if [ $SIGNAL_STRENGTH -lt 51 ]; then
-	GLYPH=
+if [ -z $SSID ]; then
+	GLYPH=D
+	SSID="<span color=\"#777777\">no Wi-Fi</span>"
+elif [ $SIGNAL_STRENGTH -lt 51 ]; then
+	GLYPH=A
 elif [ $SIGNAL_STRENGTH -lt 60 ]; then
-	GLYPH=
+	GLYPH=B
 else
-	GLYPH="WEAK:"
+	GLYPH=C
 fi
 
-echo "<span font_desc=\"\">$GLYPH</span> $SSID"
+echo "<span font_desc=\"Xujcons\">$GLYPH</span> $SSID"
