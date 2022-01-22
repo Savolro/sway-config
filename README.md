@@ -10,6 +10,7 @@ This is a repository for my sway config
 * `i3blocks`
 * `swaylock`
 * `wofi`
+* `mako`
 * `brightnessctl`
 * `jq`
 * `grim`
@@ -26,4 +27,5 @@ ln -s ~/.config/sway/swaylock ~/.config/swaylock
 ln -s ~/.config/sway/wofi ~/.config/wofi
 ln -s ~/.config/sway/alacritty ~/.config/alacritty
 ln -s ~/.config/sway/swaynag ~/.config/swaynag
+ln -s ~/.config/sway/mako ~/.config/mako
 ```
