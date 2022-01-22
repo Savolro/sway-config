@@ -1,4 +1,8 @@
 #!/bin/sh
+if [ $button ]; then
+	pavucontrol
+fi
+
 VOLUME=$(amixer sget Master | awk -F"[][]" '/Left:/ {print $2}' | sed 's/.$//')
 # VOLUME=$(amixer sget Master | awk -F"[][]" '/dB/ {print $2}' | sed 's/.$//')
 

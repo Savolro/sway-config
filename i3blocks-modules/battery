@@ -1,4 +1,8 @@
 #/bin/sh
+if [ $button ]; then
+	notify-send "Battery help" "No help, sorry"
+fi
+
 PERCENTAGE=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep percentage | awk '{print $2}' | sed 's/.$//')
 
 STATE=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep state | awk '{print $2}')

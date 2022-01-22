@@ -1,0 +1,7 @@
+#!/bin/bash
+if [ $button ]; then
+	alacritty -e bash -c 'cal -mY; read -n1'
+fi
+
+d=$(date '+%m/%d %H:%M')
+echo "<span font_desc=\"\"></span> $d"

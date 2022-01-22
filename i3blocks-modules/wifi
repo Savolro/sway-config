@@ -1,4 +1,8 @@
 #!/bin/sh
+if [ $button ]; then
+	notify-send "Wi-Fi help" "use 'nmcli', dummy"
+fi
+
 IFACE_NAME=$(/sbin/iw dev | awk '$1=="Interface"{print $2}')
 SSID=$(/sbin/iw dev $IFACE_NAME info | grep ssid | cut -d" " -f2-)
 SIGNAL_STRENGTH=$(/sbin/iw wlp0s20f3 link | grep signal | awk '{print $2}' | sed 's/^.//')
