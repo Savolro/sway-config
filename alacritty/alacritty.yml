@@ -5,9 +5,9 @@ cursor:
 font:
   normal:
     # Needs to be powerline font if using zsh theme with powerline
-    family: Source Code Pro
+    family: Roboto Mono
   # Font sizme
-  size: 17
+  size: 13
 
     # colors:
     #   primary:

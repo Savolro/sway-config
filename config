@@ -54,6 +54,7 @@ set $sway.keys.prefix.move_focused Mod4+Shift+
 
 set $sway.keys.exec.terminal $sway.keys.mod+Return
 set $sway.keys.exec.menu $sway.keys.mod+d
+set $sway.keys.exec.notes $sway.keys.mod+x
 
 set $sway.keys.state.sleep $sway.keys.mod+Shift+s
 
@@ -155,12 +156,14 @@ set $terminal alacritty
 bindsym $sway.keys.exec.terminal exec $terminal
 # Start app launcher
 bindsym $sway.keys.exec.menu exec $menu
+# Start notes
+bindsym $sway.keys.exec.notes exec $terminal -e bash -c "cd ~/dev/stuff/notes; nvim ~/dev/stuff/notes/"
 
 # =========================================================================
 # Manage system state
 # =========================================================================
 # Sleep
-bindsym $sway.keys.state.sleep exec "systemctl suspend && sleep 1 && swaylock -c 000000"
+bindsym $sway.keys.state.sleep exec "swaylock & systemctl suspend"
 
 # Fn Keys
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
@@ -198,11 +201,11 @@ bindsym $sway.keys.mod+space focus mode_toggle
 # Screenshot
 # =========================================================================
 # Screenshot the active output to a file
-bindsym $sway.keys.mod+$sway.keys.screenshot exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') $(xdg-user-dir PICTURES)/screenshot-$(date +%Y-%m-%d-%H-%M-%S-%N).png
+bindsym $sway.keys.mod+$sway.keys.screenshot exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') ~/Pictures/screenshot-$(date +%Y-%m-%d-%H-%M-%S-%N).png
 bindsym Print exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') $(xdg-user-dir PICTURES)/screenshot-$(date +%Y-%m-%d-%H-%M-%S-%N).png
 
 # Screenshot the selected area to a file
-bindsym $sway.keys.prefix.move_focused$sway.keys.screenshot exec grim -g "$(slurp -d)" $(xdg-user-dir PICTURES)/screenshot-$(date +%Y-%m-%d-%H-%M-%S-%N).png
+bindsym $sway.keys.prefix.move_focused$sway.keys.screenshot exec grim -g "$(slurp -d)" ~/Pictures/screenshot-$(date +%Y-%m-%d-%H-%M-%S-%N).png
 
 # Screenshot the active output to a clipboard
 bindsym $sway.keys.mod+$sway.keys.clipboard+$sway.keys.screenshot exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') - | wl-copy
@@ -216,7 +219,7 @@ bindsym $sway.keys.prefix.move_focused$sway.keys.clipboard+$sway.keys.screenshot
 # =========================================================================
 # Common
 # =========================================================================
-font pango: Source Code Pro Light 10
+font pango: Roboto Mono Light 10
 
 # Hide window title bars
 default_border pixel 1
@@ -231,7 +234,7 @@ bar {
     strip_workspace_numbers yes
     tray_output none
 
-    font "pango: Source Code Pro Regular 11"
+    font "pango: Roboto Mono 11"
     status_command i3blocks -c ~/.config/sway/i3blocks.conf
 
     colors {
