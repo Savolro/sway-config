@@ -55,6 +55,8 @@ set $sway.keys.prefix.move_focused Mod4+Shift+
 set $sway.keys.exec.terminal $sway.keys.mod+Return
 set $sway.keys.exec.menu $sway.keys.mod+d
 set $sway.keys.exec.notes $sway.keys.mod+x
+set $sway.keys.exec.notes.todaytodo $sway.keys.exec.notes+Shift
+set $sway.keys.exec.notes.todayjournal $sway.keys.exec.notes+Ctrl
 
 set $sway.keys.state.sleep $sway.keys.mod+Shift+s
 
@@ -152,12 +154,16 @@ focus_follows_mouse no
 # Run applications
 # =========================================================================
 # Start a terminal
-set $terminal alacritty
+set $terminal foot
 bindsym $sway.keys.exec.terminal exec $terminal
 # Start app launcher
 bindsym $sway.keys.exec.menu exec $menu
 # Start notes
 bindsym $sway.keys.exec.notes exec $terminal -e bash -c "cd ~/dev/stuff/notes; nvim ~/dev/stuff/notes/"
+# Open today's TODO
+bindsym $sway.keys.exec.notes.todaytodo exec $terminal -e bash -c "cd ~/dev/stuff/notes; nvim ~/dev/stuff/notes/todo/Todo\ $(date +%Y-%m-%d).md"
+# Open today's journal
+bindsym $sway.keys.exec.notes.todayjournal exec $terminal -e bash -c "cd ~/dev/stuff/notes; nvim ~/dev/stuff/notes/journal/$(date +%Y-%m-%d).md"
 
 # =========================================================================
 # Manage system state

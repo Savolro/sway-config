@@ -3,8 +3,8 @@ if [ $button ]; then
 	pavucontrol
 fi
 
-VOLUME=$(amixer sget Master | awk -F"[][]" '/Left:/ {print $2}' | sed 's/.$//')
-# VOLUME=$(amixer sget Master | awk -F"[][]" '/dB/ {print $2}' | sed 's/.$//')
+VOLUME=$(amixer -D pulse sget Master | awk -F"[][]" '/Left:/ {print $2}' | sed 's/.$//')
+# VOLUME=$(amixer -D pulse sget Master | awk -F"[][]" '/dB/ {print $2}' | sed 's/.$//')
 
 IS_ON=$(amixer sget Master | awk -F"[][]" '/dB/ {print $6}')
 if [ $VOLUME -gt 75 ]; then
