@@ -1,0 +1,31 @@
+* {
+	font-family: "Space Grotesk";
+	border: 0px none;
+	outline: none;
+}
+
+#window {
+	font-size: 20;
+	background-color: rgba(43, 48, 59, 0.7);
+	color: #d8dee9;
+	height=1000;
+}
+
+#input {
+	color: #ffffff;
+	background-color: rgba(43, 48, 59, 0.8);
+}
+
+#text {
+	padding-left: 15px;
+}
+
+#text:selected {
+	color: #ffffff;
+	background-color: rgba(43, 48, 59, 0.8);
+}
+
+#entry:selected {
+	background-color: rgba(43, 48, 59, 0.8);
+	color: #d8dee9;
+}
