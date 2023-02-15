@@ -262,6 +262,9 @@ bindsym $mod+Shift+x exec $term -e bash -c "cd ~/dev/stuff/notes; nvim ~/dev/stu
 # Open today's journal
 bindsym $mod+Ctrl+x exec $term -e bash -c "cd ~/dev/stuff/notes; nvim ~/dev/stuff/notes/journal/$(date +%Y-%m-%d).md"
 
+# Open notifications
+bindsym $mod+n exec swaync-client -t
+
 exec swaync
 exec avizo-service
 exec_always autotiling -l 2
