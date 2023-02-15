@@ -34,10 +34,10 @@ output * bg ~/Pictures/background.jpg fill
 #
 # Example configuration:
 #
-exec swayidle -w \
-         timeout 300 'swaylock -f' \
-         timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-         before-sleep 'swaylock -f'
+# exec swayidle -w \
+#          timeout 300 'swaylock -f' \
+#          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+#          before-sleep 'swaylock -f'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -262,5 +262,6 @@ bindsym $mod+Shift+x exec $term -e bash -c "cd ~/dev/stuff/notes; nvim ~/dev/stu
 # Open today's journal
 bindsym $mod+Ctrl+x exec $term -e bash -c "cd ~/dev/stuff/notes; nvim ~/dev/stuff/notes/journal/$(date +%Y-%m-%d).md"
 
-exec dunst
+exec swaync
+exec_always autotiling -l 2
 exec /usr/lib/xdg-desktop-portal-wlr

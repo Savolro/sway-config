@@ -98,3 +98,7 @@ button:hover {
 label:focus {
     background-color: #000000;
 }
+
+#custom-notification {
+  font-family: "NotoSansMono Nerd Font";
+}
