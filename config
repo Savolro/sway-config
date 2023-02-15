@@ -267,5 +267,6 @@ bindsym $mod+n exec swaync-client -t
 
 exec swaync
 exec avizo-service
-exec_always autotiling -l 2
+exec kanshi
+exec autotiling -l 2
 exec /usr/lib/xdg-desktop-portal-wlr

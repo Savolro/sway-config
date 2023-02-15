@@ -27,7 +27,7 @@ chmod +x ~/bin/autotiling
 rm -rf autotiling
 
 # Install extras from AUR
-yay -S --needed swaylock-effects wlogout swaync avizo
+yay -S --needed swaylock-effects wlogout swaync avizo kanshi
 
 # Install additional used tools
 sudo pacman -S --needed pavucontrol pulseaudio pulseaudio-alsa brightnessctl playerctl slurp grim wl-clipboard
@@ -58,6 +58,7 @@ ln -s ~/.config/sway/wlogout ~/.config/wlogout
 ln -s ~/.config/sway/wofi ~/.config/wofi
 ln -s ~/.config/sway/swaync ~/.config/swaync
 ln -s ~/.config/sway/avizo ~/.config/avizo
+ln -s ~/.config/sway/kanshi ~/.config/kanshi
 
 # Set GTK theme and fond for GTK apps
 yay -S --needed layan-gtk-theme-git
