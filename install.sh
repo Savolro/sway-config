@@ -44,7 +44,7 @@ rm -rf tmp
 fc-cache
 sudo pacman -S --needed unzip ttf-font-awesome
 sudo pacman -S --needed unzip noto-fonts
-yay -S --needed ttf-adobe-source-code-pro-fonts 
+yay -S --needed otf-commit-mono
 
 # TODO: check SSH/HTTPS
 mkdir -p ~/.config
