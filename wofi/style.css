@@ -5,10 +5,9 @@
 }
 
 #window {
-	font-size: 20;
+	font-size: 20px;
 	background-color: rgba(43, 48, 59, 0.7);
 	color: #d8dee9;
-	height=1000;
 }
 
 #input {
