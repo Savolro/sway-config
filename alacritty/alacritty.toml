@@ -1,0 +1,29 @@
+[colors.bright]
+black = "#5E6780"
+blue = "#1F7BFF"
+cyan = "#7DC7FF"
+green = "#CAFFB1"
+magenta = "#DD6EFF"
+red = "#FF113D"
+white = "#FFFFFF"
+yellow = "#FFAF59"
+
+[colors.normal]
+black = "#2B303B"
+blue = "#0075F2"
+cyan = "#35A7FF"
+green = "#87A878"
+magenta = "#C200FB"
+red = "#B10F2E"
+white = "#AAAAAA"
+yellow = "#E8871E"
+
+[colors.primary]
+background = "#2B303B"
+foreground = "#FFFFFF"
+
+[font]
+size = 12
+
+[font.normal]
+family = "Commit Mono"
