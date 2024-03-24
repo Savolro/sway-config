@@ -36,11 +36,11 @@ button:hover {
 }
 
 #workspaces button:hover {
-    background-color: rgba(43, 48, 59, 0.9);
+    background-color: rgba(0, 0, 0, 0);
 }
 
 #workspaces button.focused {
-    background-color: rgba(43, 48, 59, 0.7);
+    background-color: rgba(0, 0, 0, 0);
     box-shadow: inset 0 -3px #ffffff;
 }
 

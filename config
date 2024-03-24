@@ -81,7 +81,7 @@ output * bg ~/Pictures/background.jpg fill
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec wlogout
+    bindsym $mod+Shift+e exec "if pgrep -x wlogout; then killall wlogout; else wlogout; fi"
 #
     # Lock screen
     bindsym $mod+Shift+y exec swaylock -f
@@ -267,6 +267,6 @@ bindsym $mod+n exec swaync-client -t
 
 exec swaync
 exec avizo-service
-exec kanshi
 exec autotiling -l 2
 exec /usr/lib/xdg-desktop-portal-wlr
+exec kanshi
