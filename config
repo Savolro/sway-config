@@ -195,6 +195,7 @@ mode "resize" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
+
 bindsym $mod+r mode "resize"
 
 bar {
@@ -203,7 +204,11 @@ bar {
 
 gaps inner 5
 smart_gaps on
-default_border pixel 2
+default_border pixel 1
+client.focused		#00000000	#00000000	#00000000	#BBBBBB77	#EEEEEE55
+client.focused_inactive	#00000000	#00000000	#00000000	#00000000	#00000000
+client.unfocused	#00000000	#00000000	#00000000	#00000000	#00000000
+client.urgent		#FF0000FF	#FF0000FF	#FF0000FF	#FF0000FF	#FF0000FF
 
 # =========================================================================
 # Screenshot
