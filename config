@@ -4,6 +4,7 @@
 # Read `man 5 sway` for a complete reference.
 
 ### Variables
+include /etc/sway/config.d/*
 #
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
@@ -273,5 +274,4 @@ bindsym $mod+n exec swaync-client -t
 exec swaync
 exec avizo-service
 exec autotiling -l 2
-exec /usr/lib/xdg-desktop-portal-wlr
 exec kanshi
